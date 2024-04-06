@@ -1,56 +1,133 @@
-import React from "react";
-// import backgroundMusic from '../Audio/a.mp3'
+import React, { useState } from "react";
+import { Container, Row, Col, Modal, Button } from "react-bootstrap";
+// Importing images individually
+import image1 from "../Assets/001.jpg";
+import image2 from "../Assets/002.jpg";
+import image3 from "../Assets/003.jpg";
+import image4 from "../Assets/004.jpg";
+import image5 from "../Assets/005.jpg";
+import image6 from "../Assets/006.jpg";
+import image7 from "../Assets/007.jpg";
+import image8 from "../Assets/008.jpg";
+import b1 from "../Assets/b1.png";
+import back from "../Assets/back.png";
 
-export default function Nekath() {
+const Nekath = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleImageClick = (imageUrl) => {
+    setSelectedImage(imageUrl);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-12 mainBanner text-center">
-          <img
-            src="https://via.placeholder.com/150"
-            alt="Placeholder"
-            class="img-fluid"
-          />
-          <h1 className="pb-4">Main Heading is Here</h1>
+    <div className="mainBackground">
+      <div className="topBanner text-center">
+        <div>
+          <img src={b1} className="w-50 text-center mt-5 pt-5" />
+          <br />
+          <a href="/">
+            <img src={back} className="w-25 text-center" />
+          </a>
         </div>
       </div>
-      <div className="row py-3 px-5">
-        <div className="col-md-6 mainBanner text-left mt-3">
-          <div>
-            <h2>Heading 01</h2>
-            <p>Sapmle text will be here</p>
-          </div>
-        </div>
-        <div className="col-md-6 text-center mt-3">
-          <img
-            src="https://via.placeholder.com/150"
-            alt="Placeholder"
-            class="img-fluid"
-          />
-        </div>
-        <div className="col-md-6 mainBanner text-left mt-5">
-          <div>
-            <h2>Heading 02</h2>
-            <p>Sapmle text will be here</p>
-          </div>
-        </div>
-        <div className="col-md-6 text-center mt-5">
-          <img
-            src="https://via.placeholder.com/150"
-            alt="Placeholder"
-            class="img-fluid"
-          />
-          {/* <audio src={backgroundMusic}/> */}
-        </div>
-      </div>
+      <Container className="pb-5 pt-2">
+        <Row>
+          <Col className="mb-5" xs={12} sm={6} md={4} lg={3}>
+            <div
+              className="image-container"
+              onClick={() => handleImageClick(image1)}
+            >
+              <img src={image1} alt="Image 1" className="img-fluid mb-3" />
+            </div>
+          </Col>
+          <Col className="mb-5" xs={12} sm={6} md={4} lg={3}>
+            <div
+              className="image-container"
+              onClick={() => handleImageClick(image2)}
+            >
+              <img src={image2} alt="Image 1" className="img-fluid mb-3" />
+            </div>
+          </Col>
+          <Col className="mb-5" xs={12} sm={6} md={4} lg={3}>
+            <div
+              className="image-container"
+              onClick={() => handleImageClick(image3)}
+            >
+              <img src={image3} alt="Image 1" className="img-fluid mb-3" />
+            </div>
+          </Col>
+          <Col className="mb-5" xs={12} sm={6} md={4} lg={3}>
+            <div
+              className="image-container"
+              onClick={() => handleImageClick(image4)}
+            >
+              <img src={image4} alt="Image 1" className="img-fluid mb-3" />
+            </div>
+          </Col>
+          <Col className="mb-5" xs={12} sm={6} md={4} lg={3}>
+            <div
+              className="image-container"
+              onClick={() => handleImageClick(image5)}
+            >
+              <img src={image5} alt="Image 1" className="img-fluid mb-3" />
+            </div>
+          </Col>
+          <Col className="mb-5" xs={12} sm={6} md={4} lg={3}>
+            <div
+              className="image-container"
+              onClick={() => handleImageClick(image6)}
+            >
+              <img src={image6} alt="Image 1" className="img-fluid mb-3" />
+            </div>
+          </Col>
+          <Col className="mb-5" xs={12} sm={6} md={4} lg={3}>
+            <div
+              className="image-container"
+              onClick={() => handleImageClick(image7)}
+            >
+              <img src={image7} alt="Image 1" className="img-fluid mb-3" />
+            </div>
+          </Col>
+          <Col className="mb-5" xs={12} sm={6} md={4} lg={3}>
+            <div
+              className="image-container mb-5"
+              onClick={() => handleImageClick(image8)}
+            >
+              <img src={image8} alt="Image 1" className="img-fluid mb-3" />
+            </div>
+          </Col>
+          {/* Repeat this for each image */}
+          {/* Note: Adjust the image and alt attributes accordingly */}
+        </Row>
+
+        <Modal show={showModal} onHide={handleCloseModal} centered>
+          {/* <Modal.Header closeButton>
+          <Modal.Title>Image Preview</Modal.Title>
+        </Modal.Header> */}
+          <Modal.Body>
+            {selectedImage && (
+              <img
+                src={selectedImage}
+                alt="Full Screen Image"
+                className="img-fluid"
+              />
+            )}
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleCloseModal}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </Container>
     </div>
   );
-}
-// නව සඳ බැලීම: අප්රේල් 11 බ්‍රහස්පතින්දා, නව සඳ බැලීම සිදුවනු ඇත.
-// පැරණි වසර සඳහා නාන: අප්රේල් 11, බෝ පත්ර මිශ්‍ර ජලය ස්නානය, සහ ආගමික වතාවත්.
-// අලුත් අවුරුදු උදාව: සිංහල අලුත් අවුරුද්ද අප්‍රේල් මස 13 වැනි සෙනසුරාදා රාත්‍රී 09.05 ට උදාවේ.
-// අශුභ වේලාව: අප්‍රේල් මස 13 වැනි සෙනසුරාදා පස්වරු 2.41 සිට අප්‍රේල් 14 වැනි ඉරිදා අලුයම 3.29 දක්වා.
-// සාම්ප්‍රදායික ආහාර වේල: 11.06 ට. අප්රේල් 13 සෙනසුරාදා; නිල් පැහැති වස්ත්‍රාභරණයෙන් සැරසී දකුණු දිශාව බලා කිරිබත් සහ තල මිශ්‍ර රසකැවිලි පිළියෙළ කරන්න.
-// වැඩ කිරීම, ගනුදෙනු කිරීම (ගනුදෙනු) සහ ආහාර ගැනීම: අප්‍රේල් 14 ඉරිදා පෙ.ව. 12.06 ට ආරම්භ වේ. (ඉහත සාම්ප්‍රදායික කෑම බලන්න)
-// අභිෂේක තෙල්: අප්‍රේල් 15 වැනි සඳුදා පෙ.ව. 10.17 ට; සුදු වතින් සැරසී දකුණු දිශාවට මුහුණලා හිසෙහි ඉඹුල් කොළ (Bombax ceiba L.; කපු ගස; ඉඹුල්) ද පාදවල දිවුල් කොළ (Limonia acidissima; Wood apple; Divol) ද තබා දිවුල් කොළ සාරය මිශ්‍ර කර ස්නානය කරන්න. සහ සහ තෙල්.
-// රැකියා සඳහා පිටත්ව යන වේලාවන්: අප්‍රේල් 17 වැනි බදාදා පෙරවරු 6.52 ට කොළ පැහැති වස්ත්‍රා
+};
+
+export default Nekath;

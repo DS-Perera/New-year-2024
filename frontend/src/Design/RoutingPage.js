@@ -8,10 +8,12 @@ import Wish from "./Pages/Wish";
 import Games from "./Pages/Games";
 import Pancha from "./Pages/Pancha";
 import Mutti from "./Pages/Mutti";
+import TopBanner from "./Components/TopBanner";
 
 export default function RoutingPage() {
   return (
     <div>
+      {/* <TopBanner /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/nekath" element={<Nekath />} />
@@ -21,7 +23,6 @@ export default function RoutingPage() {
         <Route path="/games" element={<Games />} />
         <Route path="/pancha" element={<Pancha />} />
         <Route path="/mutti" element={<Mutti />} />
-      
       </Routes>
     </div>
   );

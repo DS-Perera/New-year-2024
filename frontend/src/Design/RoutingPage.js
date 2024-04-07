@@ -15,7 +15,7 @@ export default function RoutingPage() {
     <div>
       {/* <TopBanner /> */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/nekath" element={<Nekath />} />
         <Route path="/food" element={<Food />} />
         <Route path="/raban" element={<Raban />} />

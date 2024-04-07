@@ -41,8 +41,26 @@
 }
 
 .topBanner {
-  background-color:rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0);
   background-image: url('./Design/Assets/TopBack.png');
   height: 40vh;
   background-size: 100% 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .topBanner {
+    height: 20vh;
+    /* Adjusted height for mobile devices */
+  }
+
+  .topBanner .mainText {
+    padding: 0px !important;
+    width: 75% !important;
+  }
+
+  .innerCards .pt-3,
+  .innerCards .mt-5 {
+    margin: 0px !important;
+    padding: 0px !important
+  }
 }

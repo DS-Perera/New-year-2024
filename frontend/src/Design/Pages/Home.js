@@ -10,24 +10,24 @@ export default function Home() {
   return (
     <div className="mainBackground">
       <div className="topBanner text-center">
-        <img src={mainText} className="w-50 text-center mt-5 pt-5" />
+        <img src={mainText} className="w-50 text-center mt-5 pt-5 mainText" />
       </div>
-      <div className="container pb-5">
+      <div className="container pb-5 innerCards">
         <div className="row py-3 px-5">
-          <div className="col-md-6 mainBanner text-left">
+          <div className="col-md-6 mainBanner text-center">
             <div>
               <a href="/nekath">
                 <img src={a1} className="w-75 text-center mt-5 pt-3" />
               </a>
             </div>
           </div>
-          <div className="col-md-6 text-center">
+          <div className="col-md-6 text-center pb-5 mb-5">
             <a href="/nekath">
-              <img src={aa1} className="w-75 text-center" />
+              <img src={aa1} className="w-75 text-center pb-5 mb-5" />
             </a>
           </div>
         </div>
-        <div className="row py-3 px-5">
+        {/* <div className="row py-3 px-5">
           <div className="col-md-6 text-center"></div>
           <div className="col-md-6 mainBanner text-right">
             <div>
@@ -38,7 +38,7 @@ export default function Home() {
           </div>
         </div>
         <div className="row py-3 px-5">
-          <div className="col-md-6 mainBanner text-left">
+          <div className="col-md-6 mainBanner text-center">
             <div>
               <a href="/raban">
                 <img src={a3} className="w-75 text-center mt-5 pt-5" />
@@ -70,7 +70,7 @@ export default function Home() {
           </div>
         </div>
         <div className="row py-3 px-5">
-          <div className="col-md-6 mainBanner text-left">
+          <div className="col-md-6 mainBanner text-center">
             <div>
               <a href="/games">
                 <img src={a5} className="w-75 text-center mt-5 pt-5" />
@@ -84,7 +84,7 @@ export default function Home() {
               class="img-fluid"
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

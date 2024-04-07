@@ -29,7 +29,7 @@ const Nekath = () => {
     <div className="mainBackground">
       <div className="topBanner text-center">
         <div>
-          <img src={b1} className="w-50 text-center mt-5 pt-5" />
+          <img src={b1} className="w-50 text-center mt-5 pt-5 mainText" />
           <br />
           <a href="/">
             <img src={back} className="w-25 text-center" />
